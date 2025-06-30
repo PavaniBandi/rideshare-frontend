@@ -26,7 +26,7 @@ export default function Login({ onLogin }) {
       <input
         type="email"
         placeholder="Email"
-        className="w-full border rounded px-3 py-2"
+        className="w-full border rounded px-3 py-2 bg-white text-gray-900"
         value={email}
         onChange={e => setEmail(e.target.value)}
         required
@@ -34,7 +34,7 @@ export default function Login({ onLogin }) {
       <input
         type="password"
         placeholder="Password"
-        className="w-full border rounded px-3 py-2"
+        className="w-full border rounded px-3 py-2 bg-white text-gray-900"
         value={password}
         onChange={e => setPassword(e.target.value)}
         required

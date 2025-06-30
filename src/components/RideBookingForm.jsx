@@ -60,15 +60,15 @@ export default function RideBookingForm({ onBook }) {
     <form className="space-y-4" onSubmit={handleSubmit}>
       <div>
         <label className="block font-semibold mb-1">Pickup Location</label>
-        <input type="text" className="w-full border rounded px-3 py-2" value={pickup} onChange={e => setPickup(e.target.value)} required />
+        <input type="text" className="w-full border rounded px-3 py-2 bg-white text-gray-900" value={pickup} onChange={e => setPickup(e.target.value)} required />
       </div>
       <div>
         <label className="block font-semibold mb-1">Destination</label>
-        <input type="text" className="w-full border rounded px-3 py-2" value={drop} onChange={e => setDrop(e.target.value)} required />
+        <input type="text" className="w-full border rounded px-3 py-2 bg-white text-gray-900" value={drop} onChange={e => setDrop(e.target.value)} required />
       </div>
       <div>
         <label className="block font-semibold mb-1">Ride Type</label>
-        <select className="w-full border rounded px-3 py-2" value={rideType} onChange={e => setRideType(e.target.value)}>
+        <select className="w-full border rounded px-3 py-2 bg-white text-gray-900" value={rideType} onChange={e => setRideType(e.target.value)}>
           <option>Economy</option>
           <option>Comfort</option>
           <option>Premium</option>
@@ -77,7 +77,7 @@ export default function RideBookingForm({ onBook }) {
       </div>
       <div>
         <label className="block font-semibold mb-1">Payment Mode</label>
-        <select className="w-full border rounded px-3 py-2" value={paymentMode} onChange={e => setPaymentMode(e.target.value)}>
+        <select className="w-full border rounded px-3 py-2 bg-white text-gray-900" value={paymentMode} onChange={e => setPaymentMode(e.target.value)}>
           <option>Cash</option>
           <option>Online</option>
         </select>

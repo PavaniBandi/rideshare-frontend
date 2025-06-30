@@ -124,10 +124,10 @@ function App() {
             <section id="contact" className="py-16 bg-gray-100 w-full">
               <h2 className="text-3xl font-bold text-center mb-8">Contact</h2>
               <div className="flex justify-center w-full">
-                <form className="bg-white rounded-xl shadow-md p-8 w-full max-w-md space-y-4 mx-auto">
-                  <input type="text" className="w-full border rounded px-3 py-2" placeholder="Your Name" />
-                  <input type="email" className="w-full border rounded px-3 py-2" placeholder="Your Email" />
-                  <textarea className="w-full border rounded px-3 py-2" placeholder="Your Message" rows={4}></textarea>
+                <form className="bg-white rounded-xl shadow-md p-8 w-full max-w-md space-y-4 mx-auto text-gray-900">
+                  <input type="text" className="w-full border rounded px-3 py-2 bg-white text-gray-900" placeholder="Your Name" />
+                  <input type="email" className="w-full border rounded px-3 py-2 bg-white text-gray-900" placeholder="Your Email" />
+                  <textarea className="w-full border rounded px-3 py-2 bg-white text-gray-900" placeholder="Your Message" rows={4}></textarea>
                   <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Send</button>
                 </form>
               </div>
@@ -140,17 +140,16 @@ function App() {
       {showAuth && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
           <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md relative">
-            <button className="absolute top-2 right-2 text-gray-500" onClick={() => setShowAuth(false)}>&times;</button>
             <h2 className="text-2xl font-bold mb-4">{authMode === 'login' ? 'Login' : 'Sign Up'}</h2>
             <div className="flex gap-2 mb-4">
               <button
-                className={`flex-1 py-2 rounded ${authMode === 'login' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+                className={`flex-1 py-2 rounded ${authMode === 'login' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-900'}`}
                 onClick={() => setAuthMode('login')}
               >
                 Login
               </button>
               <button
-                className={`flex-1 py-2 rounded ${authMode === 'signup' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+                className={`flex-1 py-2 rounded ${authMode === 'signup' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-900'}`}
                 onClick={() => setAuthMode('signup')}
               >
                 Sign Up
@@ -161,6 +160,7 @@ function App() {
             ) : (
               <Signup onSignup={handleSignup} />
             )}
+            <button className="absolute top-2 right-2 text-gray-900 bg-white rounded-full w-8 h-8 flex items-center justify-center text-2xl" onClick={() => setShowAuth(false)}>&times;</button>
           </div>
         </div>
       )}
