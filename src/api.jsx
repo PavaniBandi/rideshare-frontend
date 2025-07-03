@@ -1,6 +1,6 @@
 // src/api.jsx
-// const API_BASE = 'http://localhost:8080'; // Update if your backend runs elsewhere
-const API_BASE = "https://rideshare-backend-production.up.railway.app";
+const API_BASE = 'http://localhost:8080'; // Update if your backend runs elsewhere
+// const API_BASE = "https://rideshare-backend-production.up.railway.app";
 export async function apiRequest(
   path,
   method = "GET",
