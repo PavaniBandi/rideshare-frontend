@@ -104,6 +104,88 @@ function App() {
               </div>
             </section>
 
+            {/* How It Works Section */}
+            <section className="py-16 w-full bg-gradient-to-r from-yellow-50 to-blue-50">
+              <h2 className="text-3xl font-bold text-center mb-10 text-gray-900">How It Works</h2>
+              <div className="flex flex-col md:flex-row justify-center items-center gap-8 max-w-5xl mx-auto">
+                {[
+                  { icon: "📱", title: "Request a Ride", desc: "Enter your pickup and drop locations and request a ride instantly." },
+                  { icon: "🤝", title: "Get Matched", desc: "We match you with the nearest driver for a quick pickup." },
+                  { icon: "🛵", title: "Enjoy Your Trip", desc: "Sit back, relax, and enjoy a safe, affordable ride." },
+                  { icon: "💳", title: "Easy Payment", desc: "Pay seamlessly with cash, card, or wallet after your ride." },
+                ].map((step, idx) => (
+                  <div key={step.title} className="flex flex-col items-center bg-white rounded-xl shadow-md p-6 w-64 transition-transform hover:-translate-y-2 hover:shadow-xl">
+                    <div className="text-5xl mb-4">{step.icon}</div>
+                    <h3 className="font-bold text-lg mb-2 text-gray-800">{step.title}</h3>
+                    <p className="text-gray-600 text-center">{step.desc}</p>
+                    {idx < 3 && <div className="hidden md:block w-8 h-1 bg-yellow-400 mt-4 mb-0"></div>}
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Stats Section */}
+            <section className="py-16 w-full bg-white">
+              <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-12">
+                {[
+                  { label: "Rides Completed", value: "1M+" },
+                  { label: "Happy Users", value: "500K+" },
+                  { label: "Cities Covered", value: "100+" },
+                  { label: "Avg. Rating", value: "4.8/5" },
+                ].map(stat => (
+                  <div key={stat.label} className="flex flex-col items-center">
+                    <div className="text-4xl font-extrabold text-blue-600 mb-2 animate-pulse">{stat.value}</div>
+                    <div className="text-lg text-gray-700 font-semibold">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Why Choose Us Section */}
+            <section className="py-16 w-full bg-gradient-to-r from-blue-50 to-purple-50">
+              <h2 className="text-3xl font-bold text-center mb-10 text-gray-900">Why Choose Us?</h2>
+              <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
+                {[
+                  { icon: "⏱️", title: "Instant Booking", desc: "Book a ride in seconds with our easy-to-use app." },
+                  { icon: "🛡️", title: "Verified Drivers", desc: "All drivers are background-checked and trained." },
+                  { icon: "💸", title: "Affordable Fares", desc: "Transparent pricing with no hidden charges." },
+                  { icon: "📍", title: "Live Tracking", desc: "Track your ride in real-time from start to finish." },
+                  { icon: "📞", title: "24/7 Support", desc: "We're here for you anytime, anywhere." },
+                ].map(benefit => (
+                  <div key={benefit.title} className="flex flex-col items-center bg-white rounded-xl shadow-md p-6 w-64 transition-transform hover:-translate-y-2 hover:shadow-xl">
+                    <div className="text-4xl mb-4">{benefit.icon}</div>
+                    <h3 className="font-bold text-lg mb-2 text-gray-800">{benefit.title}</h3>
+                    <p className="text-gray-600 text-center">{benefit.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Testimonials Section */}
+            <section className="py-16 w-full bg-white">
+              <h2 className="text-3xl font-bold text-center mb-10 text-gray-900">What Our Users Say</h2>
+              <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
+                {[
+                  { name: "Amit S.", text: "Super quick and affordable! My go-to app for daily commutes.", rating: 5 },
+                  { name: "Priya K.", text: "Drivers are always polite and the rides are safe.", rating: 5 },
+                  { name: "Rahul D.", text: "Love the live tracking and easy payments!", rating: 4 },
+                ].map(testimonial => (
+                  <div key={testimonial.name} className="bg-gray-50 rounded-xl shadow-md p-6 w-80 flex flex-col items-center">
+                    <div className="flex items-center mb-2">
+                      {Array.from({ length: testimonial.rating }).map((_, i) => (
+                        <span key={i} className="text-yellow-400 text-xl">★</span>
+                      ))}
+                      {Array.from({ length: 5 - testimonial.rating }).map((_, i) => (
+                        <span key={i} className="text-gray-300 text-xl">★</span>
+                      ))}
+                    </div>
+                    <p className="text-gray-700 italic mb-2 text-center">"{testimonial.text}"</p>
+                    <div className="font-semibold text-gray-900">- {testimonial.name}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
             {/* About Section (now Safety for all) */}
             <section className="py-16 w-full bg-white flex flex-col md:flex-row items-center justify-center gap-12">
               <div className="flex-1 flex justify-center items-center max-w-lg px-6 order-1 md:order-none">
